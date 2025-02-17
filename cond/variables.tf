@@ -1,9 +1,9 @@
 variable "aws_access_key" {
-    type = string
-    }
+  type = string
+}
 variable "aws_secret_key" {
-    type = string
-    }
+  type = string
+}
 
 variable "usrsList" {
   type = list(string)
@@ -15,4 +15,12 @@ variable "condition" {
 
 variable "port" {
   type = list(number)
+}
+
+variable "tags" {
+  type = list(string)  
+}
+
+variable "ami" {
+  type = map
 }
