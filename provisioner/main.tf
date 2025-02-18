@@ -50,5 +50,21 @@ resource "aws_instance" "example" {
     ]
   }
   depends_on = [aws_security_group.example_sg]
+
+  provisioner "remote-exec" {
+  when = "destroy"
+    inline = [ 
+        "sudo yum remove -y httpd"
+     ]
 }
+}
+
+resource "null_resource" "user_create" {    
+    provisioner "local-exec" {
+    command = "sudo useradd ${var.usersList[count.index]} echo ${var.usersList[count.index]}"
+  }
+  count = length(var.usersList)
+
+}
+
 
