@@ -1,0 +1,21 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.backup
+terraform.tfstate.d/
+
+# Ignore Terraform crash logs
+crash.log
+
+# Ignore Terraform execution plan files
+*.tfplan
+
+# Ignore temporary files
+.terraform/
+.terraform.lock.hcl
+
+# Ignore ZIP files used for AWS Lambda
+*.zip
+
+# Ignore sensitive files (if any)
+.env
+secrets.tfvars

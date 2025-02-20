@@ -25,4 +25,4 @@ resource "aws_instance" "terraform_instance" {
     Name = element(var.tags, count.index)
   }
   count = 2
-  }
+}
